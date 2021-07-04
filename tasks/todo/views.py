@@ -5,8 +5,8 @@ from .serializers import TodoSerializer
 
 
 class TodoViewSet(viewsets.ModelViewSet):
-    # today_min = datetime.datetime.combine(datetime.date.today(), datetime.time.min)
-    # today_max = datetime.datetime.combine(datetime.date.today(), datetime.time.max)
+    today = date.today()
 
-    queryset = Todo.objects.all().order_by('-created_at').filter(created_at__startswith=date.today())
+    queryset = Todo.objects.all().order_by(
+        '-created_at').filter(created_at__day=today.day)
     serializer_class = TodoSerializer
