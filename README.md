@@ -17,3 +17,13 @@ On Windows
 ```bash
 pip install -r requirements.txt
 ```
+For django (cd tasks)
+
+```bash
+python manage.py runserver
+```
+for quasar (cd frontend)
+
+```bash
+quasar dev
+```
